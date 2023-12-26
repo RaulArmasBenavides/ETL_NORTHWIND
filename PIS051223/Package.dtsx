@@ -11,28 +11,11 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{AB7E6EBF-062D-4AB7-888D-D77500302446}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{005EDE97-D764-4FE4-86F5-2609DF1EEDA4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.norDM.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{3C18318E-6F9E-4757-81EE-4A3F35803BCE}"
-      DTS:ObjectName="LocalHost.norDM.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=norDM;Provider=SQLNCLI11.1;Application Name=SSIS-Package-{3C18318E-6F9E-4757-81EE-4A3F35803BCE}LocalHost.norDM.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvMWFT6lJs0KeiDXMsZVuswAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABHSu6KeMxxyhngCDqwox6+HXmHkLSaCBGBbygCgLVBrgAAAAAOgAAAAAIAACAAAAAE7uTTSMgB0mTO6lkE7S+zOOX6M2PUECF82IYmrN5A3RAAAAAF1ScP9YeS89xIQWAwKIftQAAAAIkEzl35uVuw7S9SiZx8zuxE7ar+o4OGP5npzo3YYMhAU47r6DReD7CVNxKNsMg0niHgwt1rwR4eHL2JOKcl6Xk</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.norDMs]"
       DTS:CreationName="OLEDB"
@@ -42,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=norDMs;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{FAB65E28-9833-44CC-9D3D-4483EB352B2C}localhost.norDMs;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=norDMs;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{FAB65E28-9833-44CC-9D3D-4483EB352B2C}localhost.norDMs;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -58,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvMWFT6lJs0KeiDXMsZVuswAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUrBCZqmW6cY5GouIfI4/2uysfdvNCiR3ZsRvF0MlAdQAAAAAOgAAAAAIAACAAAABl/sTZHQxryukqMmjJDoUFbqVXDTFp2h7ZSx1DytNjLhAAAACICcXza+irFy+w0m9ykmhOQAAAAOnvWtijDC2xg4Hp/27o5qlnJXSFAiE6B4C2YUt9QPxVX/F4wlC90NN2kzVP0IFJYeUJjogx1GI4JLY6El/hoVI</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvMWFT6lJs0KeiDXMsZVuswAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAUvIm+68o+YH+b+oCzbADHJcFRmk9nLal+TR+wz1cCqwAAAAAOgAAAAAIAACAAAAA3AcO5Pfv+7Z/UEWg6tXqznO3UmW7Kp8ADDlc6+mhhQRAAAADVY6zBcnA00Yy94eZomhrtQAAAAFz/DXdneqStMnb9Wlx2Cm2dXRbo5kwRQhe4Kmx/8smou9dLzN0j/kiJBHdCuHaHSoVrWXFMqGaiWdyqHBp6Eks</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3970,19 +3953,19 @@ companyname from northwind.dbo.shippers</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select dc.idcliente, d.ProductID as idproducto, 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select dc.idcliente,  d.ProductID as idproducto, 
 s.SupplierID as idproveedor, o.employeeid as idempleado, 
 o.shipvia as idtransportista, dt.idtiempo,
 d.Quantity*d.UnitPrice-d.Quantity*d.UnitPrice*d.Discount as mventa,
 d.Quantity as cantidad,
 d.Quantity*d.UnitPrice*d.Discount as descto 
-from northwinds.dbo.[Order Details] as d 
-inner join northwinds.dbo.orders as o on d.OrderID=o.OrderID 
-inner join northwinds.dbo.Customers as c on o.CustomerID=c.CustomerID 
-inner join norDMs.dbo.dimcliente as dc on c.CompanyName=dc.companyname 
-inner join northwinds.dbo.Products as p on d.ProductID=p.ProductID 
-inner join northwinds.dbo.Suppliers as s on s.SupplierID=p.SupplierID
-inner join northwinds.dbo.Employees as e on e.EmployeeID=o.EmployeeID 
+from northwind.dbo.[Order Details] as d 
+inner join northwind.dbo.orders as o on d.OrderID=o.OrderID 
+inner join northwind.dbo.Customers as c on o.CustomerID=c.CustomerID 
+inner join norDMs.dbo.dimcliente as dc on c.CompanyName COLLATE Modern_Spanish_CI_AS = dc.companyname
+inner join northwind.dbo.Products as p on d.ProductID=p.ProductID 
+inner join northwind.dbo.Suppliers as s on s.SupplierID=p.SupplierID
+inner join northwind.dbo.Employees as e on e.EmployeeID=o.EmployeeID 
 inner join nordms.dbo.dimtiempo as dt on o.OrderDate = dt.fecha</property>
                 <property
                   dataType="System.String"
@@ -4009,8 +3992,8 @@ inner join nordms.dbo.dimtiempo as dt on o.OrderDate = dt.fecha</property>
               <connections>
                 <connection
                   refId="Package\VENTAS\VENTA_ORIGEN.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.Northwinds]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.Northwinds]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Northwind.sa1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5354,15 +5337,15 @@ inner join nordms.dbo.dimtiempo as dt on o.OrderDate = dt.fecha</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\VENTAS\VENTA_DESTINO"
-          TopLeft="261,298" />
+          TopLeft="261,297.000000014901" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\VENTAS\VENTA_ORIGEN"
           TopLeft="259,57" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\VENTAS\Data Conversion"
           TopLeft="262,172" />
         <EdgeLayout
@@ -5389,18 +5372,18 @@ inner join nordms.dbo.dimtiempo as dt on o.OrderDate = dt.fecha</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\VENTAS.Paths[Data Conversion Output]"
-          TopLeft="340.75,214">
+          TopLeft="340.7,213.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84"
+              EndConnector="0,83.4000000149011"
               Start="0,0"
-              End="0,76.5">
+              End="0,75.9000000149011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.5" />
+                    End="0,75.9000000149011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
