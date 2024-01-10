@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{80d774c9-6bc2-4630-8a57-2012e1ddccd7}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">PIS051223</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">ETL_NORTHWIND</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-79UR1QS</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjzQvM9k8B0quVnZsoriINQAAAAACAAAAAAAQZgAAAAEAACAAAAAJqHH+n1ySVg9zKpRQu4akCPiYHSW/5vSXMOk5A94JHgAAAAAOgAAAAAIAACAAAAAJqwQU7hmyRJGreGGLiz+Z7QeSe7V1KE2jmViRGKaWpZAAAAAj7KFhOZwPjcVeeJyjD4AsKTQM6wG0Oqm40RkJqzsTspmVf3Y9FTYk8JemEsfzQS6k3apeBkB62zxaT3Qn7UoYdGAT2eiyihBkQpyQiiFG2mop/OvcGZ6uDz64Mu37z3Z4Eef1tyr6YGInNrjm1nfJC+KB6peLxj202tjNYUNVuGbjitYSjWq4mXQxIdnXq4FAAAAAOQhgFf5+/KlyLbHnyqgXZMA46wYv9tqjA93HPOPHANAoaUBFCK8z8bvlDI3Cdqjl0BCHW9PGI4h6vAqjzZXiCw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjzQvM9k8B0quVnZsoriINQAAAAACAAAAAAAQZgAAAAEAACAAAADx0iNLYQomBkrSSRxyeV1bNMWY2XoiZvwk8uJIrlAQdAAAAAAOgAAAAAIAACAAAADu9UbOZCq7uIVnM9TsfvZ5eayX0OaaHnefTHUvX2KQMpAAAAAINdv83l93QE7t7jUpgrz+u3/1LokVrUTo96YHu3Sgpd+MHP2DCVTJVi81xO7sZVDCgmE6rX47KaO3+VYdNTEwKv+dY2imN3fSGu/zIOvy/mOq59wHevAB9txeA1v34m3VNJyYmlox5VKJmKIHQm0kPwXFzB2g868f+8Yia7zhIxHwcch2PqrXtsLmvrp7fHZAAAAA4IiT7EwuqCGdtSr/UbPCuIeYaw+gIYMAsT2f+FIY9WFQXBsUE/OyDKXdJEc8UMVOlN4J/bc7PzJyb8k0iXge8g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
